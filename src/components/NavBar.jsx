@@ -9,10 +9,10 @@ const NavBar = () => {
                         <Link to='/'>Home</Link>
                     </li>
                     <li>
-                        <Link to='/shop'>Shop</Link>
+                        <Link to='/shop/products'>Products</Link>
                     </li>
                     <li>
-                        <Link to='/cart'>Cart</Link>
+                        <Link to='/shop/cart'>Cart</Link>
                     </li>
                 </ul>
             </nav>

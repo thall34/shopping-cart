@@ -1,21 +1,22 @@
-import HomePage from './HomePage';
+import App from './App';
 import ShopPage from './ShopPage';
 import CartPage from './CartPage';
+import ProductsPage from './ProductsPage'
 import ErrorPage from './ErrorPage';
 
 const routes = [
     {
         path: '/',
-        element: <HomePage />,
+        element: <App />,
         errorElement: <ErrorPage />,
     },
     {
         path: '/shop',
         element: <ShopPage />,
-    },
-    {
-        path: '/cart',
-        element: <CartPage />,
+        children: [
+            { path: 'products', element: <ProductsPage /> },
+            { path: 'cart', element: <CartPage /> },
+        ],
     },
 ];
 
