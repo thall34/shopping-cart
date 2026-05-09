@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router';
 import NavBar from './NavBar';
-import ListItem from './ListItem';
 
 const ShopPage = () => {
     const [items, setItems] = useState([]);
@@ -32,7 +31,7 @@ const ShopPage = () => {
 
     return (
     <div>
-        <NavBar />
+        {/* <NavBar cartTotal={cart} /> */}
         <Outlet context={{ items, setItems, cart, setCart }}/>
     </div>
   );

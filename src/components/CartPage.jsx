@@ -5,16 +5,24 @@ import ListItem from './ListItem'
 const CartPage = () => {
     const { cart, setCart } = useOutletContext();
 
+    const handleChange = (id, newQuantity) => {
+        setCart(prevItems =>
+            prevItems.map(item =>
+                item.id === id ? { ...item, quantity: parseInt(newQuantity) || 0 } : item
+            )
+        );
+    };
+
+    const handleRemoveFromCart = (product) => {
+        const filteredCart = cart.filter(item => item.id !== product.id);
+        setCart(filteredCart);
+    };
+
     if (cart.length !== 0) {
     return (
         <div>
             {cart.map((item) => (
-                <div key={item.id}>
-                    <h1>{item.title}</h1>
-                    <img src={item.image} width='100' />
-                    <p>${item.price}</p>
-                    <p>Quantity: {item.quantity}</p>
-                </div>
+                <ListItem key={item.id} item={item} buttonText='Remove From Cart' onChange={handleChange} onClick={handleRemoveFromCart} />
             ))}
         </div>
     );

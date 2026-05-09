@@ -1,6 +1,19 @@
 import { Link } from 'react-router';
 
-const NavBar = () => {
+const NavBar = ({ cartTotal }) => {
+    const cartQuantity = () => {
+        let total = 0;
+
+        if (cartTotal.length !== 0) {
+            cartTotal.forEach((item) => {
+                let quantity = item.quantity;
+                total = total + quantity;
+            });
+        };
+
+        return total
+    };
+
     return (
         <>
             <nav>
@@ -12,7 +25,7 @@ const NavBar = () => {
                         <Link to='/shop/products'>Products</Link>
                     </li>
                     <li>
-                        <Link to='/shop/cart'>Cart</Link>
+                        <Link to='/shop/cart'>Cart ({ cartQuantity() })</Link>
                     </li>
                 </ul>
             </nav>

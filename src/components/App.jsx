@@ -1,13 +1,11 @@
 import NavBar from './NavBar';
-import shop1 from '../assets/shop1.jpg';
-import shop2 from '../assets/shop2.jpg';
+import { Outlet } from 'react-router';
 
 const App = () => {
     return (
         <div>
-            <NavBar />
-            <img src={shop1} alt='someone using a bank card to pay for something' width='500' height='350'/>
-            <img src={shop2} alt='a nice clean clothing store' width='500' height='350'/>
+            <NavBar cartTotal={[]} />
+            <Outlet />
         </div>
     );
 };

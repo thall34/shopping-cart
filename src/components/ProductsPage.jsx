@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useOutlet, useOutletContext } from 'react-router';
+import { useOutletContext } from 'react-router';
 import ListItem from './ListItem'
 
 const ProductsPage = () => {
-    // const [items, setItems] = useState([]);
     const { items, setItems, cart, setCart } = useOutletContext();
-    // const [cart, setCart] = useOutletContext();
 
     useEffect(() => {
         const fetchItems = async (count) => {
@@ -55,7 +53,7 @@ const ProductsPage = () => {
     return (
         <div>
             {items.map((item) => (
-                <ListItem key={item.id} item={item} onChange={handleChange} addToCart={handleAddToCart} />
+                <ListItem key={ item.id } item={ item } buttonText='Add To Cart' onChange={ handleChange } onClick={ handleAddToCart } />
             ))}
         </div>
     );

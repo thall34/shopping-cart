@@ -1,4 +1,5 @@
 import App from './App';
+import Home from './Home'
 import ShopPage from './ShopPage';
 import CartPage from './CartPage';
 import ProductsPage from './ProductsPage'
@@ -9,13 +10,19 @@ const routes = [
         path: '/',
         element: <App />,
         errorElement: <ErrorPage />,
-    },
-    {
-        path: '/shop',
-        element: <ShopPage />,
         children: [
-            { path: 'products', element: <ProductsPage /> },
-            { path: 'cart', element: <CartPage /> },
+            {
+                index: true, 
+                element: <Home />
+            },
+            {
+                path: '/shop', 
+                element: <ShopPage />, 
+                children: [
+                    { path: 'products', element: <ProductsPage /> },
+                    { path: 'cart', element: <CartPage /> },
+                ],
+            },
         ],
     },
 ];

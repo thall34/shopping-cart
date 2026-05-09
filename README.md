@@ -8,5 +8,8 @@ Proptypes to make sure proper types are being used in each component
 
 To Do:
 
-Add items to cart page when quantity is set above 0
-Decouple state from list items and pass it up to a parent element of both shopping and cart pages. Layout?
+Potentially try and set it so there is a max quantity
+Figure out how to lift the cart state up to the App Component so it displays the nav on all three pages (almost there)
+Add proptypes
+Set up tests
+Style this bad boy
