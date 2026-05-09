@@ -9,7 +9,5 @@ Proptypes to make sure proper types are being used in each component
 To Do:
 
 Potentially try and set it so there is a max quantity
-Figure out how to lift the cart state up to the App Component so it displays the nav on all three pages (almost there)
-Add proptypes
 Set up tests
 Style this bad boy

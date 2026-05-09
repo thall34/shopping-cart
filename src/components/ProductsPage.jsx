@@ -1,32 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router';
-import ListItem from './ListItem'
+import ListItem from './ListItem';
 
 const ProductsPage = () => {
     const { items, setItems, cart, setCart } = useOutletContext();
-
-    useEffect(() => {
-        const fetchItems = async (count) => {
-            const results = [];
-
-            try {
-                for (let id = 1; id <= count; id++) {
-                    const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-
-                    const item = await response.json();
-                    item.quantity = 0;
-                    results.push(item);
-
-                };
-                setItems(results);
-
-            } catch (error) {
-                console.error('Error fetching items:', error);
-            };
-        };
-        // change the default count as needed
-        fetchItems(5);
-    }, []);
 
     const handleChange = (id, newQuantity) => {
         setItems(prevItems =>
@@ -46,14 +23,14 @@ const ProductsPage = () => {
                 item.id === product.id ? { ...item, quantity: item.quantity + product.quantity } : item
             ));
         } else {
-        setCart([...cart, product]);
+            setCart([...cart, product]);
         };
     };
 
     return (
         <div>
             {items.map((item) => (
-                <ListItem key={ item.id } item={ item } buttonText='Add To Cart' onChange={ handleChange } onClick={ handleAddToCart } />
+                <ListItem key={item.id} item={item} buttonText='Add To Cart' onChange={handleChange} onClick={handleAddToCart} />
             ))}
         </div>
     );

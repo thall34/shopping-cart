@@ -1,4 +1,5 @@
 import { Link } from 'react-router';
+import PropTypes from 'prop-types';
 
 const NavBar = ({ cartTotal }) => {
     const cartQuantity = () => {
@@ -11,7 +12,7 @@ const NavBar = ({ cartTotal }) => {
             });
         };
 
-        return total
+        return total;
     };
 
     return (
@@ -22,15 +23,19 @@ const NavBar = ({ cartTotal }) => {
                         <Link to='/'>Home</Link>
                     </li>
                     <li>
-                        <Link to='/shop/products'>Products</Link>
+                        <Link to='/products'>Products</Link>
                     </li>
                     <li>
-                        <Link to='/shop/cart'>Cart ({ cartQuantity() })</Link>
+                        <Link to='/cart'>Cart ({cartQuantity()})</Link>
                     </li>
                 </ul>
             </nav>
         </>
     );
+};
+
+NavBar.propTypes = {
+    cartTotal: PropTypes.array,
 };
 
 export default NavBar
