@@ -20,13 +20,13 @@ const NavBar = ({ cartTotal }) => {
             <nav>
                 <ul>
                     <li>
-                        <Link to='/'>Home</Link>
+                        <Link to='/' className='nav-link'>Home</Link>
                     </li>
                     <li>
-                        <Link to='/products'>Products</Link>
+                        <Link to='/products' className='nav-link'>Products</Link>
                     </li>
                     <li>
-                        <Link to='/cart'>Cart ({cartQuantity()})</Link>
+                        <Link to='/cart' className='nav-link'>Cart ({cartQuantity()})</Link>
                     </li>
                 </ul>
             </nav>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router';
 import NavBar from './NavBar';
+import '../styles/App.css'
 
 const App = () => {
     const [items, setItems] = useState([]);

@@ -30,7 +30,7 @@ const CartPage = () => {
 
     if (cart.length !== 0) {
         return (
-            <div>
+            <div className='item-list'>
                 {cart.map((item) => (
                     <ListItem key={item.id} item={item} buttonText='Remove From Cart' onChange={handleChange} onClick={handleRemoveFromCart} />
                 ))}
@@ -39,7 +39,9 @@ const CartPage = () => {
         );
     } else {
         return (
-            <h1>Your cart is empty!</h1>
+            <div className='item-list'>
+                <h1>Your cart is empty!</h1>
+            </div>
         )
     }
 };

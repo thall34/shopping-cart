@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 const ListItem = ({ item, buttonText, onChange, onClick }) => {
     return (
-        <div>
+        <div className='list-item'>
             <h1>{item.title}</h1>
-            <img src={item.image} width='100' />
+            <img src={item.image} className="list-item-image" />
             <p>${item.price.toFixed(2)}</p>
             <p>Quantity:</p>
             <input name='quantity' type='number' value={item.quantity} min='0' onChange={(e) => onChange(item.id, e.target.value)}></input>

@@ -28,7 +28,7 @@ const ProductsPage = () => {
     };
 
     return (
-        <div>
+        <div className='item-list'>
             {items.map((item) => (
                 <ListItem key={item.id} item={item} buttonText='Add To Cart' onChange={handleChange} onClick={handleAddToCart} />
             ))}
