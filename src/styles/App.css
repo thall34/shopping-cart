@@ -3,19 +3,68 @@ body {
     padding: 0;
     border: 0;
     box-sizing: border-box;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     font-size: 16px;
 }
 
 #root {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
-    background-color: rgb(237, 237, 238);
+    background-color: rgb(255, 255, 255);
 }
 
 nav {
     padding: 1em;
+    padding-top: 3em;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2em;
+    font-size: 1em;
+    font-weight: 200;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    width: 2em;
+}
+
+.decrease {
+    background-color: rgb(67, 155, 171);
+    border: none;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    padding: 0.2em 0.6em;
+}
+
+.increase {
+    background-color: rgb(67, 155, 171);
+    border: none;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    padding: 0.2em 0.6em;
+}
+
+.submit {
+    background-color: rgb(67, 155, 171);
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
 }
 
 ul {
@@ -32,16 +81,23 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 20%;
+}
+
+.company {
+    text-align: center;
+    font-size: 2em;
+    padding-top: 1.5em;
 }
 
 .nav-link {
     text-decoration: none;
     color: black;
     background-color: rgb(67, 155, 171);
+    border: 1px solid black;
     border-radius: 1em;
     padding: 1em 2em;
-    width: 50%;
+    width: 100%;
     text-align: center;
 }
 
@@ -57,7 +113,7 @@ li {
     border: 5px solid rgb(67, 155, 171);
 }
 
-.item-list {
+.cart-list {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,23 +121,58 @@ li {
     padding: 2em;
 }
 
-.list-item {
+.item-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+    padding: 2em;
+}
+
+.item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(67, 155, 171);
-    width: 50%;
-    padding: 1em;
-    border-radius: 2em;
+    justify-self: center;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    padding: 1em 0;
+    gap: 0.6em;
 }
 
-h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.5em;
-    font-weight: 300;
+.cart {
+    width: 50%;
 }
 
 .list-item-image {
     width: 20%;
+}
+
+@media screen and (max-width: 767px) {
+    .company {
+        font-size: 1.5em;
+    }
+
+    .nav-link {
+        padding: 1em 0.5em;
+    }
+
+    .home {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-image {
+        width: 100%;
+    }
+    
+    .cart {
+        width: 100%;
+    }
+
+    .item-list {
+        display: flex;
+        flex-direction: column;
+    }
 }

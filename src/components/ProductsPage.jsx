@@ -27,10 +27,26 @@ const ProductsPage = () => {
         };
     };
 
+    const handleIncrease = (id) => {
+        setItems(prevItems =>
+            prevItems.map(item =>
+                item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+            )
+        );
+    };
+
+    const handleDecrease = (id) => {
+        setItems(prevItems =>
+            prevItems.map(item =>
+                item.id === id && item.quantity > 0 ? { ...item, quantity: item.quantity - 1 } : item
+            )
+        );
+    };
+
     return (
         <div className='item-list'>
             {items.map((item) => (
-                <ListItem key={item.id} item={item} buttonText='Add To Cart' onChange={handleChange} onClick={handleAddToCart} />
+                <ListItem key={item.id} item={item} buttonText='Add To Cart' onChange={handleChange} cartButton={handleAddToCart} increaseButton={handleIncrease} decreaseButton={handleDecrease} styling='item' />
             ))}
         </div>
     );

@@ -32,8 +32,10 @@ const App = () => {
 
     return (
         <div>
+            <h1 className='company'>Whitehall Textiles and Adornments</h1>
             <NavBar cartTotal={cart} />
             <Outlet context={{ items, setItems, cart, setCart }} />
+            <h2>Copyright © Whitehall Web Development 2026</h2>
         </div>
     );
 };
